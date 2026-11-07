@@ -1,0 +1,32 @@
+# Secrets y credenciales (nunca al repo)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+
+# Enunciado de la cátedra (se entrega por el campus, no se versiona)
+Enunciado-*.pdf
+
+# Media pesada o con copyright (los videos se cargan en runtime en el harness)
+*.mp4
+*.webm
+*.mov
+# Excepción: demo corta (~10 s, 3.4 MB) del chroma key del Hit 5
+!hit5/capturas/video_hit5.webm
+
+# Dependencias / build
+node_modules/
+_site/
+
+# SO / IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp

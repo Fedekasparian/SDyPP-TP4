@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP4 Shader Harness</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>TP4 · Shader Harness</h1>
+    <p class="sub">SDyPP 2026 · Programación Paralela. Los mismos <code>.glsl</code> de ShaderToy, ejecutados con WebGL2 en tu GPU.</p>
+  </header>
+
+  <main>
+    <section class="stage">
+      <canvas id="canvas" width="640" height="360" aria-label="Salida del shader"></canvas>
+      <pre id="error" hidden></pre>
+      <div class="stats"><span id="fps">— fps</span> · <span id="res">—</span> · <span id="pixels">—</span></div>
+    </section>
+
+    <aside class="controls">
+      <label>Hit / shader
+        <select id="hit"></select>
+      </label>
+      <p id="hit-desc" class="desc"></p>
+
+      <fieldset id="ch0-box">
+        <legend>iChannel0</legend>
+        <select id="ch0" data-channel="0">
+          <option value="pattern">Imagen de prueba (patrón)</option>
+          <option value="webcam">Webcam</option>
+          <option value="file">Archivo local (video / imagen)…</option>
+        </select>
+      </fieldset>
+
+      <fieldset id="ch1-box">
+        <legend>iChannel1</legend>
+        <select id="ch1" data-channel="1">
+          <option value="greenscreen">Imagen de prueba (fondo verde animado)</option>
+          <option value="webcam">Webcam</option>
+          <option value="file">Archivo local (video / imagen)…</option>
+        </select>
+      </fieldset>
+
+      <fieldset id="threshold-box">
+        <legend>Umbral chroma (iMouse.x)</legend>
+        <input id="threshold" type="range" min="0" max="1" step="0.01" value="0.6">
+        <output id="threshold-val">0.60</output>
+      </fieldset>
+
+      <div class="buttons">
+        <button id="reload" type="button">Recargar shader</button>
+        <button id="capture" type="button">Capturar PNG</button>
+      </div>
+      <input id="file" type="file" accept="video/*,image/*" hidden>
+      <p class="hint">Arrastrar sobre el canvas también mueve <code>iMouse</code>, igual que en ShaderToy.</p>
+    </aside>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
